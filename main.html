@@ -1,0 +1,228 @@
+<html>
+<head>
+	<title>Cave Story Wallpaper for Wallpaper Engine by Max le Fou</title>
+	<link rel="stylesheet" type="text/css" href="main.css" />
+	<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+	<script src="jquery-3.5.0.js"></script>
+	<script src="js/jquery.min.js" type="text/javascript"></script>
+	<script src="js/jquery.spritely.js" type="text/javascript"></script> 
+	<script src="js/main.js" type="text/javascript"></script> 
+	<script>
+		function change(myradio){
+			var spriteEl = document.getElementById('flying_sprite');
+			if(myradio.value=="1"){
+				spriteEl.src = "img/kazuma.gif" ;
+			}else{
+				spriteEl.src = "img/balrog.gif" ;
+			}
+		}
+		$(document).ready(function () {
+
+            $("#dmenu").on({
+                "click": fopen,
+            });
+			$("#exit").on({
+                "click": fexit,
+            });
+			$("#window").on({
+                "click": fnext,
+            });
+		});
+		var w=""
+			function fopen() {
+					
+					var window=document.getElementById("window")
+					if(window.style.display=="none"){
+        			window.style.display="block";
+					w="　　　　你好:D，我是今年資工系二年級的李柏賢，興趣是打遊戲看漫畫！最討厭的事情就是coding :((　　>>>"
+					fword();}
+			
+        }
+		function fnext() {
+					if(w!="　　　　來玩玩看猜燈謎吧！"){
+					x=-1;
+					w="　　　　來玩玩看猜燈謎吧！"
+					var window=document.getElementById("window")
+					var word=document.getElementById("selfc")
+					var vtable=document.getElementById("table")
+					vtable.style.display="block";
+					word.innerHTML="";
+					fword();}
+			
+        }
+		x=-1;
+		
+		
+		function fword(){
+			x = x+1;
+			var window=document.getElementById("window")
+			var word=document.getElementById("selfc")
+			if(w[x]!=undefined){
+				word.innerHTML+=w[x];
+				t=setTimeout("fword( )", 100);
+			}else{
+				if(x % 2)
+					word.innerHTML+='_';
+				else
+					word.innerHTML=w;
+				t=setTimeout("fword( )", 100);
+			}
+			if(window.style.display=="none"){
+				clearTimeout(t) ;}
+		}
+		function fexit() {
+			var window=document.getElementById("window")
+			var word=document.getElementById("selfc")
+			var vtable=document.getElementById("table")
+					vtable.style.display="none";
+			x=-1;
+			word.innerHTML="";
+			window.style.display="none";
+			
+		}
+	</script> 
+</head>
+<body onload="load()" onBlur="tt_pause()" onFocus="tt_play()">
+	<div id="music">
+	<audio id="audio_id" src="sounds/Cave Story OST - T26 Cave Story (Plantation Main Theme).mp3" autoplay controls loop preload="auto">
+	</audio>
+	</div>
+
+	
+				<div data-video="aHtWKbR_P-c" data-autoplay="0" data-loop="1" id="youtube-audio" style="width: 10px; margin: 2em auto; cursor: pointer; display: none;"><img id="youtube-icon" src="https://i.imgur.com/IDzX9gL.png"><iframe id="youtube-player" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" width="0" height="0" src="https://i.imgur.com/JC08Fu3QfJg.html"></iframe></div>
+	<script type="text/javascript" id="www-widgetapi-script" src="./js/www-widgetapi.js.&#19979;&#36617;" async=""></script><script type="text/javascript" src="./js/iframe_api"></script>
+	
+
+
+
+	<div id="moon"></div>
+
+	<div id="balrog"><img id="flying_sprite" src="img/balrog.gif" /></div>
+	
+	<div id="cloud1"></div>
+	<div id="cloud2"></div>
+	<div id="cloud3"></div>
+	<div id="cloud4"></div>
+	<div id="dmenu">
+		<img src="img/chrome.png" width=80 height=80>
+		<p></p>
+		<label style="color: white; margin-left: 18px;">chrome</label>
+	</div>
+	<div id="window"style="position: relative;width: 50%;height:250px; margin-left: 30%;display: none; border: 1px solid white;background-color:black;opacity:0.8" scrolling="no" >
+		<p>Ｂ１０７１７０３８　李柏賢</p>
+		<hr />
+		<p id="selfc"></p>
+		<table style="    color:white;font-family:'DFKai-sb';display: none;" id="table">
+			<tr>
+				<td>腳像細牛腳，身像大狗重。行象後生子，須象老大人（打一動物名）</td>
+				<td><select>       <option selected>-　　</option>            <option>羊</option>        </select></td>
+			</tr>
+			<tr>
+				<td>有面無口，有腳無手。聽人講話，陪人吃酒（打一日常用品）</td>
+				<td><select>       <option selected>-　　</option>            <option>桌子</option>        </select></td>
+			</tr>	
+			<tr>
+				<td>早不說晚不說（打一字）</td>
+				<td><select>       <option selected>-　　</option>            <option>許</option>        </select></td>
+			</tr>
+			<tr>
+				<td>上下一體（打一字）</td>
+				<td><select>       <option selected>-　　</option>            <option>卡</option>        </select></td>
+			</tr>
+			<tr>
+				<td>兄弟七八個，圍著柱子坐，大家一分手，衣服全扯破。（打一植物）</td>
+				<td><select>       <option selected>-　　</option>            <option>蒜頭</option>        </select></td>
+			</tr>
+		</table>		
+		<div class="bContainer" style="box-sizing: border-box;position: absolute;bottom: 110px;right: 110px;opacity:0.3">
+			<div class="box1"></div>
+			<div class="box2"></div>
+			<div class="box3"></div>
+			<div class="box4"></div>
+			<div class="box5"></div>      
+		</div>
+		<img id="exit" src="img/icon_x256.png" width=60 style="box-sizing: border-box;position: absolute;bottom: 25;right: 25;">
+	</div>
+	<script>
+		
+		var audioElement = document.getElementById("audio_id");
+		
+		function tt_play(){
+		audioElement.play();
+		player.playVideo(); 
+		document.getElementById("youtube-icon").src = "https://i.imgur.com/IDzX9gL.png";
+		}
+
+		function tt_pause(){
+		audioElement.pause();
+		player.pauseVideo(); 
+		document.getElementById("youtube-icon").src =  "https://i.imgur.com/quyUPXN.png";
+		}
+		
+		function load() {
+  		audioElement.loop = true;
+		audioElement.volume = 0.1;
+		audioElement.play();
+		}
+		
+		var player;
+	  function onYouTubeIframeAPIReady() {
+	
+		var ctrlq = document.getElementById("youtube-audio");
+		ctrlq.innerHTML = '<img id="youtube-icon" width="80px" src=""/><div id="youtube-player"></div>';
+		ctrlq.style.cssText = 'width:1px;box-sizing: border-box; position: absolute;bottom: 80px;cursor:hand;display:none';
+		ctrlq.onclick = toggleAudio;
+	
+		player = new YT.Player('youtube-player', {
+		  height: '0',
+		  width: '0',
+		  videoId: ctrlq.dataset.video,
+		  playerVars: {
+			autoplay: ctrlq.dataset.autoplay,
+			loop: ctrlq.dataset.loop,
+		  },
+		  events: {
+			'onReady': onPlayerReady,
+			'onStateChange': onPlayerStateChange 
+		  } 
+		});
+	  } 
+	
+	  function togglePlayButton(play) {    
+		document.getElementById("youtube-icon").src = play ? "https://i.imgur.com/IDzX9gL.png" : "https://i.imgur.com/quyUPXN.png";
+	  }
+	
+	  function toggleAudio() {
+		if ( player.getPlayerState() == 1  ) {
+		  player.pauseVideo(); 
+		  document.getElementById("youtube-icon").src =  "https://i.imgur.com/quyUPXN.png";
+	 
+		} else {
+		  player.playVideo(); 
+		  document.getElementById("youtube-icon").src = "https://i.imgur.com/IDzX9gL.png";
+	 
+		} 
+	  } 
+	
+	  function onPlayerReady(event) {
+		document.getElementById("youtube-audio").style.display = "block";
+		togglePlayButton(player.getPlayerState() !== 5);
+	  }
+	
+	  function onPlayerStateChange(event) {
+		if (event.data === 0) {
+		  togglePlayButton(false); 
+		}
+	  }
+	
+	</script>
+
+			<div id="sprite">
+				<hr />       
+					<input type="radio" onchange="change(this)" name="radEdu" value="0" checked/><img src="img/balrog.gif"  width="42" height="42" alt="balrog">              
+					<input type="radio" onchange="change(this)" name="radEdu" value="1" /><img src="img/kazuma.gif"  width="42" height="42" alt="kazuma">                  
+				<hr />    
+			</div>
+			
+</body>
+</html>

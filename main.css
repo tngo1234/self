@@ -1,0 +1,149 @@
+body {
+	background: url('img/stars.gif') repeat;
+	overflow:hidden;
+}
+
+#moon {
+	background: transparent url('img/moon.png') 0 0 no-repeat;
+	height: 100px;
+	width: 100px;
+	position: absolute;
+	top: 10%;
+	right: 10%;
+	clear: both;
+	z-index: -6;
+}
+
+#balrog {
+	background: transparent 0 0 no-repeat;
+	height: 100px;
+	width: 100px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	clear: both;
+	z-index: -2;
+}
+
+#cloud1 {
+	background: transparent url('img/cloud1.png') repeat-x;
+	height: 128px;
+	width: 100%;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	clear: both;
+	z-index: -1;
+}
+
+#cloud2 {
+	background: transparent url('img/cloud2.png') repeat-x;
+	height: 200px;
+	width: 100%;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	clear: both;
+	z-index: -3;
+}
+
+#cloud3 {
+	background: transparent url('img/cloud3.png') repeat-x;
+	height: 257px;
+	width: 100%;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	clear: both;
+	z-index: -4;
+}
+
+#cloud4 {
+	background: transparent url('img/cloud4.png') repeat-x;
+	height: 328px;
+	width: 100%;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	clear: both;
+	z-index: -5;
+}
+
+#dmenu{
+	background: transparent  repeat-x;
+	top: 10;
+	left: 10;
+	position: absolute;
+	z-index: 1;
+	float: top;
+}
+#sprite{
+    box-sizing: border-box;
+    /* 設定絕對位置在底部 */
+    position: absolute;
+	bottom: 0;
+}
+#music {
+    box-sizing: border-box;
+    /* 設定絕對位置在底部 */
+    position: absolute;
+	bottom: 0;
+	right: 0;
+}
+#window {
+
+    color:white;
+    font-family:'DFKai-sb';
+    /* 位置設為relative, 作為footer區塊位置的參考 */
+}
+
+
+
+.box1, .box2, .box3, .box4, .box5{
+	border-radius:100%;
+	width:100px; 
+	height:100px; 
+	position:absolute;		
+	border: 2px solid white;
+}
+.box1{
+	animation:r1 6s infinite linear; 
+}
+.box2{
+	animation:r2 3s infinite linear;
+}
+.box3{
+	animation:r3 3s infinite linear;
+}
+.box4{
+	animation:r4 6s infinite linear;
+}
+.box5{
+	animation:r5 6s infinite linear;
+}
+
+
+@keyframes logo{
+	from{ transform:rotateX(0) rotateZ(0) ;} 
+	to { transform:rotateX(360deg) rotateZ(360deg);} 
+}
+@keyframes r1{
+	from{ transform:rotateX(0) rotateY(0)}
+	to{  transform:rotateX(360deg) rotateY(360deg)}
+}
+@keyframes r2{
+	from{ transform:rotateX(0)}
+	to{  transform:rotateX(360deg)}
+}
+@keyframes r3{
+	from{ transform:rotateY(0)}
+	to{  transform:rotateY(360deg)}
+}
+@keyframes r4{
+	from{ transform:rotateX(0) rotateY(45deg);}
+	to{  transform:rotateX(360deg) rotateY(45deg);}
+}
+@keyframes r5{
+	from{ transform:rotateX(0) rotateY(-45deg);}
+	to{  transform:rotateX(360deg) rotateY(-45deg);}
+}
