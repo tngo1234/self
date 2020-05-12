@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html class="js-focus-visible"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><style type="text/css">
+@font-face {
+  font-weight: 400;
+  font-style:  normal;
+  font-family: 'Inter-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-weight: 400;
+  font-style:  italic;
+  font-family: 'Inter-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-Italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 500;
+  font-style:  normal;
+  font-family: 'Inter-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-Medium.woff2') format('woff2');
+}
+@font-face {
+  font-weight: 500;
+  font-style:  italic;
+  font-family: 'Inter-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-MediumItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 700;
+  font-style:  normal;
+  font-family: 'Inter-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-Bold.woff2') format('woff2');
+}
+@font-face {
+  font-weight: 700;
+  font-style:  italic;
+  font-family: 'Inter-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-BoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 900;
+  font-style:  normal;
+  font-family: 'Inter-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-Black.woff2') format('woff2');
+}
+@font-face {
+  font-weight: 900;
+  font-style:  italic;
+  font-family: 'Inter-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-BlackItalic.woff2') format('woff2');
+}</style></head><body><div style="display:flex;justify-content:center;align-items:center;">
+    <div style="width:400px;height:300px;">
+        <div data-video="aHtWKbR_P-c" data-autoplay="0" data-loop="1" id="youtube-audio" style="width: 150px; margin: 2em auto; cursor: pointer; display: block;"><img id="youtube-icon" src="./youtube-audio-player2_files/IDzX9gL.png"><iframe id="youtube-player" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" width="0" height="0" src="./youtube-audio-player2_files/JC08Fu3QfJg.html"></iframe></div>
+        <div style="clear:both;margin:10px;text-align:center">
+            <p>The audio player is created with the YouTube API.</p>
+            <p>Read Tutorial: <a href="http://www.labnol.org/internet/youtube-audio-player/26740/">YouTube Audio Player</a></p>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" id="www-widgetapi-script" src="./youtube-audio-player2_files/www-widgetapi.js.&#19979;&#36617;" async=""></script><script type="text/javascript" src="./youtube-audio-player2_files/iframe_api"></script>
+<script>
+
+  var player;
+  function onYouTubeIframeAPIReady() {
+
+    var ctrlq = document.getElementById("youtube-audio");
+    ctrlq.innerHTML = '<img id="youtube-icon" src=""/><div id="youtube-player"></div>';
+    ctrlq.style.cssText = 'width:150px;margin:2em auto;cursor:pointer;cursor:hand;display:none';
+    ctrlq.onclick = toggleAudio;
+
+    player = new YT.Player('youtube-player', {
+      height: '0',
+      width: '0',
+      videoId: ctrlq.dataset.video,
+      playerVars: {
+        autoplay: ctrlq.dataset.autoplay,
+        loop: ctrlq.dataset.loop,
+      },
+      events: {
+        'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange 
+      } 
+    });
+  } 
+
+  function togglePlayButton(play) {    
+    document.getElementById("youtube-icon").src = play ? "https://i.imgur.com/IDzX9gL.png" : "https://i.imgur.com/quyUPXN.png";
+  }
+
+  function toggleAudio() {
+    if ( player.getPlayerState() == 1 || player.getPlayerState() == 3 ) {
+      player.pauseVideo(); 
+      togglePlayButton(false);
+    } else {
+      player.playVideo(); 
+      togglePlayButton(true);
+    } 
+  } 
+
+  function onPlayerReady(event) {
+    player.setPlaybackQuality("small");
+    document.getElementById("youtube-audio").style.display = "block";
+    togglePlayButton(player.getPlayerState() !== 5);
+  }
+
+  function onPlayerStateChange(event) {
+    if (event.data === 0) {
+      togglePlayButton(false); 
+    }
+  }
+
+</script></body><loom-container id="lo-engage-ext-container"><div></div><loom-shadow classname="resolved"></loom-shadow></loom-container></html>
